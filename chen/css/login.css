@@ -1,0 +1,41 @@
+#chen-login {
+    height: 100%;
+    background: #f0f2f5 url(../images/background.svg) no-repeat center 110px;
+    padding-top: 1px;
+    margin-top: -1px;
+}
+
+#chen-login .layui-logo {
+    user-select: none;
+    overflow: hidden;
+    position: static;
+    font-size: 27px;
+    width: 100%;
+    padding: 0;
+    line-height: 120px;
+    height: 120px;
+    color: #3491ff;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    transition: height .8s cubic-bezier(0.075, 0.82, 0.165, 1)
+}
+
+#chen-login .layui-logo span {
+    font-weight: 600;
+    color: rgba(0, 0, 0, .85);
+    border-bottom: 1px solid #3491ff;
+}
+
+#chen-login .layui-logo span b {
+    color: #3491ff;
+}
+
+#chen-login .login-wrap {
+    position: relative;
+    top: 50%;
+    margin-top: -290px;
+    height: 540px;
+}
+
+#chen-login .layui-form {
+    overflow: hidden;
+}
