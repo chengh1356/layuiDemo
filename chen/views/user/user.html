@@ -1,0 +1,92 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>用户管理</title>
+    <link rel="stylesheet" href="../../../layui/css/layui.css">
+    <script src="../../../layui/layui.js"></script>
+</head>
+<div lay-title="用户管理">
+    <form action="" class="layui-form layui-table-form" lay-filter="user-table-form">
+        <div class="layui-row">
+            <div class="layui-col-md10">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label layui-form-label-sm">用户名</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="username" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label layui-form-label-sm">创建时间</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="createTime" id="createTime" class="layui-input" lay-verify="date" lay-key="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label layui-form-label-sm">状态</label>
+                        <div class="layui-input-inline">
+                            <select name="status" id="">
+                              <option value=""></option>
+                              <option value="0">禁用</option>
+                              <option value="1">有效</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label layui-form-label-sm">手机</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="username" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="" class="layui-form-label layui-form-label-sm">部门</label>
+                    <div class="layui-input-inline">
+                        <!-- <input type="text" class="layui-input" name="dept" id="dept" lay-filter="dept" style="display:none;"> -->
+                        <select name="dept" id="">
+                            <option value=""></option>
+                            <option value="kf">开发部</option>
+                            <option value="cw">财务部</option>
+                            <option value="cg">采购部</option>
+                          </select>
+                    </div>
+                    <label class="layui-form-label layui-form-label-sm">性别</label>
+                    <div class="layui-input-inline">
+                        <select name="sex" id="">
+                          <option value=""></option>
+                          <option value="0">男</option>
+                          <option value="1">女</option>
+                          <option value="2">保密</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md2 layui-col-sm12 layui-col-xs12 table-action-area">
+                <div class="layui-btn layui-btn-sm layui-btn-primary table-action" id="query">
+                    <i class="layui-icon layui-icon-search"></i>
+                </div>
+                <div class="layui-btn layui-btn-sm layui-btn-primary table-action" id="query">
+                    <i class="layui-icon layui-icon-refresh"></i>
+                </div>
+                <div class="layui-btn layui-btn-sm layui-btn-primary table-action" id="query">
+                    <i class="layui-icon layui-icon-align-left"></i>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function() {
+        var form = layui.form,
+            layer = layui.layer,
+            layedit = layui.layedit,
+            laydate = layui.laydate;
+        //日期
+        laydate.render({
+            elem: '#createTime'
+        });
+
+    })
+</script>

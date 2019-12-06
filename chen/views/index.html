@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>CHEN 权限系统</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+</head>
+
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <div class="layui-logo">CHEN 权限系统</div>
+
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img"> 陈光辉
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="">个人中心</a></dd>
+                        <dd><a href="">密码修改</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="">退出</a></li>
+            </ul>
+        </div>
+
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a class="" href="javascript:;">系统管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a lay-href="../views/user/user.html">用户管理</a></dd>
+                            <dd><a href="javascript:;">角色管理</a></dd>
+                            <dd><a href="javascript:;">菜单管理</a></dd>
+                            <dd><a href="javascript:;">部门管理</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">系统监控</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">在线用户</a></dd>
+                            <dd><a href="javascript:;">系统日志</a></dd>
+                            <dd><a href="javascript:;">登录日志</a></dd>
+                            <dd><a href="javascript:;">Redis监控</a></dd>
+                            <dd><a lay-href="/monitor/redis/terminal">Redis终端</a></dd>
+                            <dd><a href="javascript:;">请求追踪</a></dd>
+                            <dd>
+                                <li class="layui-nav-item">
+                                    <a href="javascript:;">系统信息</a>
+                                    <dl class="layui-nav-child">
+                                        <dd><a href="javascript:;">JVM信息</a></dd>
+                                        <dd><a href="javascript:;">Tomcat信息</a></dd>
+                                        <dd><a href="javascript:;">服务器信息</a></dd>
+                                    </dl>
+                                </li>
+                            </dd>
+
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">任务调度</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">定时任务</a></dd>
+                            <dd><a href="javascript:;">调度日志</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">代码生成</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:">生成配置</a></dd>
+                            <dd><a href="javascript:">代码生成</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="">其他模块</a>
+                        <dl class="layui-nav-child">
+                            <dd>
+                                <li class="layui-nav-item">
+                                    <a href="javascript:;">CHEN组件</a>
+                                    <dl class="layui-nav-child">
+                                        <dd><a href="javascript:;">表单组件</a></dd>
+                                        <dd><a href="javascript:;">表单组合</a></dd>
+                                        <dd><a href="javascript:;">CHEN工具</a></dd>
+                                        <dd><a href="javascript:;">系统图标</a></dd>
+                                        <dd><a href="javascript:;">其他组件</a></dd>
+                                    </dl>
+                                </li>
+                            </dd>
+                            <dd>
+                                <li class="layui-nav-item">
+                                    <a href="javascript:;">Apex图表</a>
+                                    <dl class="layui-nav-child">
+                                        <dd><a href="javascript:;">线性图表</a></dd>
+                                        <dd><a href="javascript:;">面积图表</a></dd>
+                                        <dd><a href="javascript:;">柱形图表</a></dd>
+                                        <dd><a href="javascript:;">雷达图表</a></dd>
+                                        <dd><a href="javascript:;">条形图表</a></dd>
+                                        <dd><a href="javascript:;">混合图表</a></dd>
+                                    </dl>
+                                </li>
+                            </dd>
+                            <dd><a href="javascript:">高德地图</a></dd>
+                            <dd><a href="javascript:">导入导出</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 内容主体区域 -->
+        <div class="layui-body chen-tabs-body" id="chen-body">
+
+        </div>
+    </div>
+    <script src="../../layui/layui.js"></script>
+    <script>
+        //JavaScript代码区域
+        layui.use('element', function() {
+            var element = layui.element;
+
+        });
+    </script>
+</body>
+
+</html>
