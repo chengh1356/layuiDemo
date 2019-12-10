@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="../../../layui/css/layui.css">
     <script src="../../../layui/layui.js"></script>
 </head>
-<div lay-title="用户管理">
+<div lay-title="用户管理" id="chen-user">
     <form action="" class="layui-form layui-table-form" lay-filter="user-table-form">
         <div class="layui-row">
             <div class="layui-col-md10">
@@ -67,26 +67,55 @@
                 <div class="layui-btn layui-btn-sm layui-btn-primary table-action" id="query">
                     <i class="layui-icon layui-icon-search"></i>
                 </div>
-                <div class="layui-btn layui-btn-sm layui-btn-primary table-action" id="query">
+                <div class="layui-btn layui-btn-sm layui-btn-primary table-action" id="reset">
                     <i class="layui-icon layui-icon-refresh"></i>
                 </div>
-                <div class="layui-btn layui-btn-sm layui-btn-primary table-action" id="query">
+                <div class="layui-btn layui-btn-sm layui-btn-primary table-action action-more" id="action-more">
                     <i class="layui-icon layui-icon-align-left"></i>
                 </div>
             </div>
         </div>
     </form>
+    <table lay-filter="userTable" lay-data="{id:'userTable'}"></table>
 </div>
 <script>
-    layui.use(['form', 'layedit', 'laydate'], function() {
-        var form = layui.form,
-            layer = layui.layer,
-            layedit = layui.layedit,
-            laydate = layui.laydate;
-        //日期
-        laydate.render({
-            elem: '#createTime'
-        });
+    var currentUser =
+        layui.config({
+            bae: 'chen/'
+        }).extend({
+            dropdown: '../../lay/modules/dropdown'
+        }).use(['dropdown', 'jquery', 'form', 'layedit', 'laydate'], function() {
+            var $ = layui.jquery,
+                $view = $('#chen-user'),
+                form = layui.form,
+                layer = layui.layer,
+                layedit = layui.layedit,
+                laydate = layui.laydate,
+                dropdown = layui.dropdown;
+            //日期
+            laydate.render({
+                elem: '#createTime'
+            });
+            dropdown.render({
+                elem: $view.find('.action-more'),
+                options: [{
+                    name: 'add',
+                    title: '新增用户',
+                    perms: 'user:add'
+                }, {
+                    name: 'delete',
+                    title: '删除用户',
+                    perms: 'user:delete'
+                }, {
+                    name: 'reset',
+                    title: '密码重置',
+                    perms: 'user:password:reset'
+                }, {
+                    name: 'export',
+                    title: '导出Excel',
+                    perms: 'user:export'
+                }]
+            })
 
-    })
+        })
 </script>
